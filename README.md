@@ -2,7 +2,7 @@
 
 [**Webpage**](https://decisionforce.github.io/ACO) | [**Code**](https://github.com/decisionforce/ACO) |  [**Paper**](https://arxiv.org/pdf/2204.02393.pdf) 
 
-![](/Users/qihang/Documents/CUHK/term2/ACO/docs/images/teaser.jpg)
+![](./docs/images/teaser.jpg)
 
 ## Installation
 
