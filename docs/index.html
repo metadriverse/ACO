@@ -1,10 +1,34 @@
 <!doctype html>
 <html lang="en">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
 
 <!-- === Header Starts === -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Action-Conditioned Contrastive Policy Pretraining</title>
+    <title>ACO</title>
     <link href="./assets/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/font.css" rel="stylesheet" type="text/css">
     <link href="./assets/style.css" rel="stylesheet" type="text/css">
@@ -47,14 +71,15 @@
                          vertical-align: text-top;
                          text-align: center;
                          ">
-                        <a href="https://decisionforce.github.io/" target="_blank">
+                        <!-- <a href="https://decisionforce.github.io/" target="_blank">
                             <img src="images/deciforce.png">
-                        </a>
+                        </a> -->
                     </div>
 
                 </td>
                 <td>
                     <div style="padding-top: 10pt;" class="title" id="lang">
+                        Learning to Drive by Watching YouTube videos: <br>
                         Action-Conditioned Contrastive Policy Pretraining
                     </div>
                 </td>
@@ -129,6 +154,81 @@
                 We collect huge number of YouTube driving videos, across 68 cities all over the world with a wide range of weather conditions and visual appearance.
                 You can find our collected videos in <a href="https://docs.google.com/spreadsheets/d/1KNFFrfEE5q4d40uBR6MN9YtTggnv2o2AHRxGRZMgs3E/edit?usp=sharing">this link</a>.
             </p>
+            <!-- p>
+                
+                <video style="display:block; width:100%; height:auto; "
+                           autoplay="autoplay" muted loop="loop" playsinline>
+                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-720p.mov"
+                                type="video/mp4"/>
+                    </video>		
+            </p> -->
+            <button type="button" class="collapsible"><b>A montage gallery </b>(Click to watch, ~20Mb)</button>
+			<div class="content">
+	  			<p>
+	  				<video style="display:block; width:100%; height:auto; "
+	                           autoplay="autoplay" muted loop="loop" playsinline>
+	                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-720p.mov"
+	                                type="video/mp4"/>
+	                </video>
+	           	</p>
+			</div>
+
+           
+			<p>
+				The video frames are further tagged with pesudo action labels by the inverse dynamics model. Here we show group scenarios into three kinds by their steering value:
+			</p>
+			
+			<button type="button" class="collapsible"><b>Left-turning scenarios</b> (~5Mb)</button>
+			<div class="content">
+	  			<p>
+	  				<video style="display:block; width:100%; height:auto; "
+	                           autoplay="autoplay" muted loop="loop" playsinline>
+	                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-left-720p.mov"
+	                                type="video/mp4"/>
+	                </video>
+	           	</p>
+			</div>
+			
+			<button type="button" class="collapsible"><b>Straight-driving scenarios</b> (~5Mb)</button>
+			<div class="content">
+  				<p>
+  					<video style="display:block; width:100%; height:auto; "
+                           autoplay="autoplay" muted loop="loop" playsinline>
+                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-mid-720p.mov"
+                                type="video/mp4"/>
+                    </video>
+                </p>
+			</div>
+
+			<button type="button" class="collapsible"><b>Right-turning scenarios</b> (~5Mb)</button>
+			<div class="content">
+  				<p>
+  					<video style="display:block; width:100%; height:auto; "
+                           autoplay="autoplay" muted loop="loop" playsinline>
+                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-right-720p.mov"
+                                type="video/mp4"/>
+                    </video>
+                </p>
+			</div>
+
+			<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+			    this.classList.toggle("active");
+			    var content = this.nextElementSibling;
+			    if (content.style.display === "block") {
+			      content.style.display = "none";
+			    } else {
+			      content.style.display = "block";
+			    }
+			  });
+			}
+			</script>
+
+
         </div>
 
         <!-- <div class="teaser">
@@ -142,10 +242,17 @@
     <div class="title" id="lang">Citation</div>
     <div class="body">
         <div class="text">
-            <br>
-            <p>
-                tbd.
-            </p>
+
+           
+            	<pre>
+@article{zhang2022action,
+  title={Action-Conditioned Contrastive Policy Pretraining},
+  author={Zhang, Qihang and Peng, Zhenghao and Zhou, Bolei},
+  journal={arXiv preprint arXiv:2204.02393},
+  year={2022}
+}
+				</pre>
+         
         </div>
 
         <!-- <div class="teaser">
