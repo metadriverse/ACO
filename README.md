@@ -1,4 +1,4 @@
-# Action-Conditioned Contrastive Policy Pretraining (ECCV22)
+# Learning to Drive by Watching YouTube videos: Action-Conditioned Contrastive Policy Pretraining (ECCV22)
 
 [**Webpage**](https://metadriverse.github.io/ACO) | [**Code**](https://github.com/metadriverse/ACO) |  [**Paper**](https://arxiv.org/pdf/2204.02393.pdf) 
 
@@ -29,3 +29,11 @@ Some important arguments:
 
 ## Bibtex
 
+```
+@article{zhang2022learning,
+  title={Learning to Drive by Watching YouTube videos: Action-Conditioned Contrastive Policy Pretraining},
+  author={Zhang, Qihang and Peng, Zhenghao and Zhou, Bolei},
+  journal={arXiv preprint arXiv:2204.02393},
+  year={2022}
+}
+```
