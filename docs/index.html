@@ -78,7 +78,7 @@
 
                 </td>
                 <td>
-                    <div style="padding-top: 10pt;" class="title" id="lang">
+                    <div style="padding-top: 0pt;" class="title" id="lang">
                         Learning to Drive by Watching YouTube videos: <br>
                         Action-Conditioned Contrastive Policy Pretraining
                     </div>
@@ -92,7 +92,6 @@
     </div>
     <!-- === Title Ends === -->
     <div class="author">
-        <p style="text-align:center">ECCV 2022</p>
         <a href="#" target="_blank">Qihang Zhang</a><sup>1</sup>,&nbsp;&nbsp;
         <a href="https://pengzhenghao.github.io">Zhenghao Peng</a><sup>1</sup>,&nbsp;
         <a href="https://boleizhou.github.io" target="_blank">Bolei Zhou</a><sup>2</sup>&nbsp;
@@ -105,29 +104,28 @@
     </div>
     <table border="0" align="center">
         <tr>
-            <td align="center" style="padding: 0pt 0 15pt 0">
-                <a class="bar" href="https://metadriverse.github.io/ACO"><b>Webpage</b></a> |
-                <a class="bar" href="https://github.com/metadriverse/ACO"><b>Code</b></a> |
-                <a class="bar" href="https://arxiv.org/pdf/2204.02393.pdf"><b>Paper</b></a>
+            <td align="center" style="padding: 0pt 0 5pt 0">
+                <a class="bar" href="https://arxiv.org/pdf/2204.02393.pdf" target="_blank"><b>Paper at ECCV'22</b></a> | 
+                <a class="bar" href="https://github.com/metadriverse/ACO" target="_blank"><b>Code</b></a> 
             </td>
         </tr>
     </table>
-
+	<p>
+                    <video style="padding: 0pt 0 0pt 0; display:block; width:100%; height:auto; "
+	                           autoplay="autoplay" muted loop="loop" playsinline>
+	                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-720p.mov"
+	                                type="video/mp4"/>
+	                </video>
+	           	</p>
 </div>
 <!-- === Home Section Ends === -->
 
 
 <div class="section">
-    <div class="title" id="lang">Methods</div>
+    <div class="title" id="lang">Overview</div>
     <div class="body">
-        <div class="teaser">
-            <img style="width: 80.8%;"
-                 src="images/teaser.jpg">
-        </div>
-        <div class="text">
-            <br>
-            <p>
-                In this paper, we propose a novel action-conditioned policy pretraining paradigm, which captures important features in the neural representation relevant to the decision-making and benefits various downstream tasks.
+           <p>
+                This work develops a novel action-conditioned policy pretraining method called ACO by learning from driving videos on the web. It learns to capture important features in the neural representation relevant to the decision-making and benefits various downstream tasks.
             </p>
             <p>
                 The method consists the following steps:
@@ -135,120 +133,35 @@
                     <li>We first collect a large corpus of driving videos with a wide range of weather conditions, from wet to sunny, from all across the world.  </li>
                     <li>We then train a inverse dynamics model with a small amount of labeled data and use it to  
                         generate action pseudo labels for each collected frame. </li> 
-                    <li>We finally develop a novel policy pretraining method called <b>A</b>ction-conditioned <b>CO</b>ntrastive Learning (<b>ACO</b>) that incorporates the action information in the representation learning. </li>
+                    <li>We then develop a contrastive learning that incorporates action pseudo labels for representation learning.</li>
                 </ol>
+            The learned representations show a strong performance on downstream driving tasks, outperforming ImageNet-pretrained weights and other self-supervised representations.
+         <div class="teaser">
+            <img style="width: 80.8%;"
+                 src="images/teaser.jpg">
+        </div>
+        <div class="text">
+            <br>
                 
                 
                   
             </p>
+            <p> The processed video frames used for training will be released soon. The list of YouTube video can be download <a href="https://docs.google.com/spreadsheets/d/1KNFFrfEE5q4d40uBR6MN9YtTggnv2o2AHRxGRZMgs3E/edit?usp=sharing">here</a>.
         </div>
-    </div>
-</div>
-<!-- === Overview Section Ends === -->
-<div class="section">
-    <div class="title" id="lang">YouTube Driving Videos</div>
-    <div class="body">
-        <div class="text">
-            <br>
-            <p>
-                We collect huge number of YouTube driving videos, across 68 cities all over the world with a wide range of weather conditions and visual appearance.
-                You can find our collected videos in <a href="https://docs.google.com/spreadsheets/d/1KNFFrfEE5q4d40uBR6MN9YtTggnv2o2AHRxGRZMgs3E/edit?usp=sharing">this link</a>.
-            </p>
-            <!-- p>
-                
-                <video style="display:block; width:100%; height:auto; "
-                           autoplay="autoplay" muted loop="loop" playsinline>
-                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-720p.mov"
-                                type="video/mp4"/>
-                    </video>		
-            </p> -->
-            <button type="button" class="collapsible"><b>A montage gallery </b>(Click to watch, ~20MB)</button>
-			<div class="content">
-	  			<p>
-	  				<video style="display:block; width:100%; height:auto; "
-	                           autoplay="autoplay" muted loop="loop" playsinline>
-	                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-720p.mov"
-	                                type="video/mp4"/>
-	                </video>
-	           	</p>
-			</div>
-
-           
-			<p>
-				The video frames are further tagged with pesudo action labels by the inverse dynamics model. Here we show group scenarios into three kinds by their steering value:
-			</p>
-			
-			<button type="button" class="collapsible"><b>Left-turning scenarios</b> (~5MB)</button>
-			<div class="content">
-	  			<p>
-	  				<video style="display:block; width:100%; height:auto; "
-	                           autoplay="autoplay" muted loop="loop" playsinline>
-	                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-left-720p.mov"
-	                                type="video/mp4"/>
-	                </video>
-	           	</p>
-			</div>
-			
-			<button type="button" class="collapsible"><b>Straight-driving scenarios</b> (~5MB)</button>
-			<div class="content">
-  				<p>
-  					<video style="display:block; width:100%; height:auto; "
-                           autoplay="autoplay" muted loop="loop" playsinline>
-                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-mid-720p.mov"
-                                type="video/mp4"/>
-                    </video>
-                </p>
-			</div>
-
-			<button type="button" class="collapsible"><b>Right-turning scenarios</b> (~5MB)</button>
-			<div class="content">
-  				<p>
-  					<video style="display:block; width:100%; height:auto; "
-                           autoplay="autoplay" muted loop="loop" playsinline>
-                        <source src="https://raw.githubusercontent.com/zqh0253/misc/master/aco/supp-right-720p.mov"
-                                type="video/mp4"/>
-                    </video>
-                </p>
-			</div>
-
-			<script>
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
-
-			for (i = 0; i < coll.length; i++) {
-			  coll[i].addEventListener("click", function() {
-			    this.classList.toggle("active");
-			    var content = this.nextElementSibling;
-			    if (content.style.display === "block") {
-			      content.style.display = "none";
-			    } else {
-			      content.style.display = "block";
-			    }
-			  });
-			}
-			</script>
-
-
-        </div>
-
-        <!-- <div class="teaser">
-            <img style="width: 80.8%;"
-                 src="images/teaser.jpg">
-        </div> -->
     </div>
 </div>
 
 <div class="section">
-    <div class="title" id="lang">Citation</div>
+    <div class="title" id="lang">Reference</div>
     <div class="body">
         <div class="text">
-
+            <p>Learning to Drive by Watching YouTube Videos: Action-Conditioned Contrastive Policy Pretraining. <br>Qihang Zhang, Zhenghao Peng, and Bolei Zhou. <br>European Conference on Computer Vision (ECCV), 2022</p>
            
             	<pre>
 @article{zhang2022learning,
   title={Learning to Drive by Watching YouTube videos: Action-Conditioned Contrastive Policy Pretraining},
   author={Zhang, Qihang and Peng, Zhenghao and Zhou, Bolei},
-  journal={arXiv preprint arXiv:2204.02393},
+  journal={European Conference on Computer Vision (ECCV)},
   year={2022}
 }
 				</pre>
