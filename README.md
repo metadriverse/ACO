@@ -10,7 +10,7 @@ Our codebase is based on [MoCo](https://github.com/facebookresearch/moco). A sim
 
 ## Dataset
 
-We collect driving videos from YouTube. Here we provide the [:link: video list](https://docs.google.com/spreadsheets/d/1KNFFrfEE5q4d40uBR6MN9YtTggnv2o2AHRxGRZMgs3E/edit?usp=sharing) we used.
+We collect driving videos from YouTube. Here we provide the [:link: video list](https://docs.google.com/spreadsheets/d/1KNFFrfEE5q4d40uBR6MN9YtTggnv2o2AHRxGRZMgs3E/edit?usp=sharing) we used. You could also download the frames directly via [:link: this OneDrive link](https://mycuhk-my.sharepoint.com/:f:/g/personal/1155165194_link_cuhk_edu_hk/ErrNZZuZPuJOoX75o7Lo45YBB-bwbLHbD1GSenfnf4-xzQ?e=Xx4RRS).
 
 ## Training
 
