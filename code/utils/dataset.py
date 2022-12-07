@@ -7,15 +7,9 @@ import cv2
 from torch.utils.data import Dataset
 from PIL import Image
 
-test = False
-if test:
-    ZIP = 'smallytb.zip'
-    META = 'smeta.txt'
-    PREFIX = 'smallytb'
-else:
-    ZIP = 'ytb.zip'
-    META = 'meta.txt'
-    PREFIX = 'newytb'
+ZIP = 'ytb.zip'
+META = 'meta.txt'
+PREFIX = 'newytb'
 
 class ZipLoader(object):
     """Defines a class to load zip file.
@@ -70,7 +64,7 @@ class YTBDataset(Dataset):
             index += self.eval_offset
         index = index * self.interval
         info = self.meta_info[index]
-        path, throttle, steering, speed = info.split()
+        path, steering = info.split()
 
         if index < 6510787:
             rindex = index
@@ -79,16 +73,14 @@ class YTBDataset(Dataset):
 
         path = path[:path.find('/')] + '/' + str(rindex) + path[-4:]
 
-        throttle = float(throttle)
         steering = float(steering)
-        speed = float(speed[:-3])
         img = self.zip_loader.get_image(self.zip_path, os.path.join(PREFIX, path))
         img = self.transform(Image.fromarray(img))
-        return img, steering, throttle, speed
+        return img, steering
 
 class LabelYTBDataset(YTBDataset):
     @staticmethod
-    def _get_label(s, t):
+    def _get_label(s):
         if s<0:
             s=0
         if s>1:
@@ -98,8 +90,8 @@ class LabelYTBDataset(YTBDataset):
 
     def __getitem__(self, index):
         item = super().__getitem__(index)
-        img, steering, throttle, speed = item
-        label = self._get_label(steering, throttle)
+        img, steering = item
+        label = self._get_label(steering)
         return img, label
 
 
