@@ -16,6 +16,8 @@ We collect driving videos from YouTube. Here we provide the [:link: video list](
 cat sega* > frames.zip
 ```
 to get the zip file.
+For training ACO, you should also download `label.pt` and `meta.txt`, and put them under `{aco_path}/code` and `{your_dataset_directory}/` respectively.
+
 
 ## Training
 
@@ -24,7 +26,7 @@ We provide `main_label_moco.py` for training. To perform ACO training of a ResNe
 ```python
 python main_label_moco.py -a resnet34 --mlp -j 16 --lr 0.003 \
 			 --batch-size 256 --moco-k 40960 --dist-url 'tcp://localhost:10001' \
-			 --multiprocessing-distributed --world-size 1 --rank 0 [your-dataset-directory] 
+			 --multiprocessing-distributed --world-size 1 --rank 0 {your_dataset_directory} 
 ```
 
 Some important arguments:
